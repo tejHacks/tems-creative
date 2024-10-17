@@ -8,10 +8,10 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --purple-one:purple;
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --purple-one:#240024;
+  --background-color: #550955; /* Background color for the entire website, including individual sections */
   --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ffffff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -47,13 +47,18 @@
   scroll-behavior: smooth;
 }
 
+/* Service tools */
+.service-tools > li, .service-tools i{
+  font-size: 1.6em;
+}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  /* font-family: var(--default-font); */
+  font-family: sans-serif;
 }
 
 a {
@@ -61,7 +66,9 @@ a {
   text-decoration: none;
   transition: 0.3s;
 }
-
+#business-tag{
+  font-family: "Poppins", sans-serif;
+}
 a:hover {
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   text-decoration: none;
@@ -192,7 +199,7 @@ h6 {
 }
 
 .pulsating-play-btn:hover:after {
-  border-left: 15px solid var(--accent-color);
+  border-left: 15px solid var(--background-color);
   transform: scale(20);
 }
 
@@ -212,7 +219,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(98, 0, 104, 0);
+  --background-color: rgba(122, 0, 198, 0.863);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -282,7 +289,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgb(0, 0, 0);
+  --background-color: rgba(122, 0, 198, 0.863);
 }
 
 /*--------------------------------------------------------------
@@ -445,7 +452,7 @@ h6 {
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    background-color: #000910;
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
     overflow-y: auto;
@@ -455,7 +462,8 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    color: var(--nav-color);
+    text-transform: uppercase;
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -487,11 +495,12 @@ h6 {
     background-color: var(--accent-color);
     color: var(--contrast-color);
   }
-
+  
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    /* color: var(--nav-dropdown-hover-color); */
+    color: #8a8a8a;
   }
 
   .navmenu .active i,
@@ -551,7 +560,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
+  color: var(--accent-color);
   background-color: var(--background-color);
   font-size: 14px;
   position: relative;
@@ -592,9 +601,9 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: white;
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -613,6 +622,7 @@ h6 {
 
 .footer .footer-links {
   margin-bottom: 30px;
+  color: white;
 }
 
 .footer .footer-links ul {
@@ -621,14 +631,14 @@ h6 {
   margin: 0;
 }
 
-.footer .footer-links ul i {
+.footer .footer-links ul li, .footer-link ul i {
   padding-right: 3px;
   font-size: 13px;
   line-height: 0;
-  color: var(--accent-color);
 }
 
 .footer .footer-links ul li {
+  color: var(--accent-color);
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -639,7 +649,7 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
   display: inline-block;
   line-height: 1;
 }
@@ -668,6 +678,9 @@ h6 {
   border-color: var(--accent-color);
 }
 
+input{
+  border: var(--background-color) solid;
+}
 .footer .footer-newsletter .newsletter-form input[type=email] {
   border: 0;
   padding: 4px;
@@ -774,19 +787,22 @@ h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
+  /* font-size: 30px; */
   right: 15px;
   bottom: 15px;
   z-index: 99999;
   background-color: var(--accent-color);
   width: 40px;
   height: 40px;
+  /* color: var(--background-color); */
   border-radius: 4px;
   transition: all 0.4s;
 }
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  font-weight: 800;
+  color: var(--purple-one);
   line-height: 0;
 }
 
@@ -1641,11 +1657,11 @@ section,
 
 .team .member .social a {
   transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .team .member .social a:hover {
-  color: var(--accent-color);
+  color: var(--purple-one);
 }
 
 .team .member .social i {
@@ -1657,7 +1673,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
-  background-color: var(--surface-color);
+  background-color: var(--purple-one);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 24px 0 30px 0;
 }
@@ -1679,7 +1695,7 @@ section,
 
 .contact .info-item h3 {
   font-size: 20px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: white;
   font-size: 18px;
   font-weight: 700;
   margin: 10px 0;
@@ -1690,9 +1706,12 @@ section,
   margin-bottom: 0;
   font-size: 14px;
 }
+.contact .info-item i{
+  color: white;
+}
 
 .contact .php-email-form {
-  background-color: var(--surface-color);
+  background-color: var(--purple-one);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   height: 100%;
   padding: 30px;
@@ -1704,6 +1723,10 @@ section,
   }
 }
 
+.contact .php-email-form input::placeholder{
+  color: white;
+}
+
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {
@@ -1711,9 +1734,9 @@ section,
   padding: 10px 15px;
   box-shadow: none;
   border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--surface-color);
+  background-color: var(--purple-one);
+  border-color: 2px #fff solid;
 }
 
 .contact .php-email-form input[type=text]:focus,
@@ -1725,11 +1748,11 @@ section,
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, white, transparent 70%);
 }
 
 .contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
+  color: var(--purple-one);
   background: var(--accent-color);
   border: 0;
   padding: 10px 30px;
@@ -1807,7 +1830,7 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .services-list {
-  background-color: var(--surface-color);
+  background-color: var(--purple-one);
   padding: 10px 30px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 20px;
@@ -1827,6 +1850,9 @@ section,
   color: var(--heading-color);
   font-weight: 700;
   border-color: var(--accent-color);
+}
+.service-details .services-list a{
+  color: var(--accent-color);
 }
 
 .service-details .services-list a:hover {
@@ -1861,12 +1887,17 @@ section,
   padding: 5px 0;
   display: flex;
   align-items: center;
+  border-radius: 50%;
 }
 
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
+}
+.service-details ul li:hover{
+  padding-bottom: 20px;
+  /* box-shadow: 0px 2px 0px 4px white; */
 }
 
 /*--------------------------------------------------------------
